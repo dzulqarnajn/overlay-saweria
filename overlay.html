@@ -15,46 +15,48 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
         .overlay-container {
-            width: 100%;
+            width: 90%; /* Menyesuaikan agar tidak kepotong */
+            max-width: 400px; /* Batasi ukuran maksimal */
             display: flex;
             justify-content: center;
             align-items: center;
             position: absolute;
-            bottom: 20px;
+            bottom: 10%; /* Naikkan sedikit supaya tidak kepotong */
             left: 50%;
             transform: translateX(-50%);
-            scale: 1.5; /* Perbesar ukuran overlay */
         }
         .donation-box {
             background: rgba(0, 0, 0, 0.7);
-            padding: 20px 40px; /* Perbesar padding agar lebih terlihat */
-            border-radius: 15px;
-            border: 3px solid cyan;
+            padding: 15px 25px; /* Perkecil padding */
+            border-radius: 12px;
+            border: 2px solid cyan;
             display: inline-block;
+            width: 100%; /* Supaya responsif */
         }
         .progress-container {
             width: 100%;
             background: rgba(255, 255, 255, 0.2);
-            height: 30px; /* Perbesar tinggi progress bar */
-            border-radius: 15px;
-            margin-top: 15px;
+            height: 20px; /* Perkecil tinggi progress bar */
+            border-radius: 10px;
+            margin-top: 10px;
         }
         .progress-bar {
             height: 100%;
             background: cyan;
             width: 30%; /* Sesuaikan dengan progress donasi */
-            border-radius: 15px;
+            border-radius: 10px;
         }
         .cta-text {
-            margin-top: 15px;
-            font-size: 18px; /* Perbesar font agar lebih jelas */
+            margin-top: 10px;
+            font-size: 14px; /* Perkecil font agar pas */
             color: yellow;
         }
         .donation-link {
-            margin-top: 15px;
-            font-size: 20px;
+            margin-top: 10px;
+            font-size: 16px;
             font-weight: bold;
             color: #ffcc00;
             text-decoration: none;
@@ -65,7 +67,7 @@
 <body>
     <div class="overlay-container">
         <div class="donation-box">
-            <p style="font-size: 20px;">🔥 Donasi Terbaru: <strong>@Username</strong> - Rp10.000 🔥</p>
+            <p style="font-size: 16px;">🔥 Donasi Terbaru: <strong>@Username</strong> - Rp10.000 🔥</p>
             <div class="progress-container">
                 <div class="progress-bar"></div>
             </div>
