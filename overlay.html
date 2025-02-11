@@ -46,8 +46,9 @@
         .progress-bar {
             height: 100%;
             background: cyan;
-            width: 30%; /* Sesuaikan dengan progress donasi */
+            width: 0%; /* Awalnya 0%, akan diperbarui dengan JS */
             border-radius: 10px;
+            transition: width 0.5s ease-in-out;
         }
         .cta-text {
             margin-top: 10px;
@@ -63,6 +64,21 @@
             display: block;
         }
     </style>
+    <script>
+        async function fetchDonations() {
+            try {
+                let response = await fetch('https://api.saweria.co/donation/dzulqar'); // Ganti 'username' dengan username Saweria kamu
+                let data = await response.json();
+                let totalDonasi = data.total || 0; // Total donasi dari API
+                let targetDonasi = 500000; // Target donasi
+                let progressPercent = Math.min((totalDonasi / targetDonasi) * 100, 100);
+                document.querySelector('.progress-bar').style.width = progressPercent + '%';
+            } catch (error) {
+                console.error('Error fetching donations:', error);
+            }
+        }
+        setInterval(fetchDonations, 5000); // Update setiap 5 detik
+    </script>
 </head>
 <body>
     <div class="overlay-container">
@@ -72,7 +88,7 @@
                 <div class="progress-bar"></div>
             </div>
             <p class="cta-text">🎯 Road to Upgrade PC: Rp500.000</p>
-            <a class="donation-link" href="https://saweria.co/username" target="_blank">💰 Donasi di: saweria.co/username</a>
+            <a class="donation-link" href="https://saweria.co/dzulqar" target="_blank">💰 Donasi di: saweria.co/dzulqar</a>
         </div>
     </div>
 </body>
