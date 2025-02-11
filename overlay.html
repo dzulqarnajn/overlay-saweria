@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,84 +18,46 @@
             overflow: hidden;
         }
         .overlay-container {
-            width: 80%; /* Menyesuaikan agar tidak kepotong */
-            max-width: 350px; /* Batasi ukuran maksimal agar pas di layar vertikal */
+            width: 80%;
+            max-width: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
             position: absolute;
-            top: 50%; /* Posisikan di tengah */
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
         .donation-box {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px 20px; /* Perkecil padding */
-            border-radius: 12px;
-            border: 2px solid cyan;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 25px;
+            border-radius: 15px;
+            border: 3px solid #FF6E5C; /* Warna oranye sesuai tema Saweria */
             display: inline-block;
-            width: 100%; /* Supaya responsif */
-        }
-        .progress-container {
             width: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            height: 20px; /* Perkecil tinggi progress bar */
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-        .progress-bar {
-            height: 100%;
-            background: cyan;
-            width: 0%; /* Awalnya 0%, akan diperbarui dengan JS */
-            border-radius: 10px;
-            transition: width 0.5s ease-in-out;
         }
         .cta-text {
             margin-top: 10px;
-            font-size: 14px; /* Perkecil font agar pas */
-            color: yellow;
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFCC00;
         }
         .donation-link {
-            margin-top: 10px;
-            font-size: 16px;
+            margin-top: 15px;
+            font-size: 20px;
             font-weight: bold;
-            color: #ffcc00;
+            color: #FFCC00;
             text-decoration: none;
             display: block;
+            pointer-events: none;
         }
     </style>
-    <script>
-        async function fetchDonations() {
-            try {
-                let response = await fetch('https://api.saweria.co/donation/dzulqar'); // Ganti 'username' dengan username Saweria kamu
-                let data = await response.json();
-                
-                let totalDonasi = data.total || 0; // Total donasi dari API
-                let latestDonation = data.recent_donations ? data.recent_donations[0] : null;
-                let targetDonasi = 500000; // Target donasi
-                let progressPercent = Math.min((totalDonasi / targetDonasi) * 100, 100);
-                
-                document.querySelector('.progress-bar').style.width = progressPercent + '%';
-                
-                if (latestDonation) {
-                    document.querySelector('#latest-donation').innerHTML = `🔥 Donasi Terbaru: <strong>@${latestDonation.name}</strong> - Rp${latestDonation.amount} 🔥`;
-                }
-            } catch (error) {
-                console.error('Error fetching donations:', error);
-            }
-        }
-        setInterval(fetchDonations, 5000); // Update setiap 5 detik
-    </script>
 </head>
 <body>
     <div class="overlay-container">
         <div class="donation-box">
-            <p id="latest-donation" style="font-size: 16px;">🔥 Donasi Terbaru: <strong>@Username</strong> - Rp10.000 🔥</p>
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-            <p class="cta-text">🎯 Road to Upgrade PC: Rp500.000</p>
-            <a class="donation-link" href="https://saweria.co/dzulqar" target="_blank">💰 Donasi di: saweria.co/username</a>
+            <p class="cta-text">💰 Dukung Live Ini dengan Donasi! 💰</p>
+            <span class="donation-link">saweria.co/dzulqar</span>
         </div>
     </div>
 </body>
