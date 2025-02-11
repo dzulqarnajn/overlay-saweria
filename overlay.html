@@ -17,35 +17,36 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
+            scale: 1.5; /* Perbesar ukuran overlay */
         }
         .donation-box {
             background: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            border-radius: 10px;
-            border: 2px solid cyan;
+            padding: 20px 40px; /* Perbesar padding agar lebih terlihat */
+            border-radius: 15px;
+            border: 3px solid cyan;
             display: inline-block;
         }
         .progress-container {
             width: 100%;
             background: rgba(255, 255, 255, 0.2);
-            height: 20px;
-            border-radius: 10px;
-            margin-top: 10px;
+            height: 30px; /* Perbesar tinggi progress bar */
+            border-radius: 15px;
+            margin-top: 15px;
         }
         .progress-bar {
             height: 100%;
             background: cyan;
             width: 30%; /* Sesuaikan dengan progress donasi */
-            border-radius: 10px;
+            border-radius: 15px;
         }
         .cta-text {
-            margin-top: 10px;
-            font-size: 14px;
+            margin-top: 15px;
+            font-size: 18px; /* Perbesar font agar lebih jelas */
             color: yellow;
         }
         .donation-link {
-            margin-top: 10px;
-            font-size: 16px;
+            margin-top: 15px;
+            font-size: 20px;
             font-weight: bold;
             color: #ffcc00;
             text-decoration: none;
@@ -56,12 +57,12 @@
 <body>
     <div class="overlay-container">
         <div class="donation-box">
-            <p>🔥 Donasi Terbaru: <strong>@Username</strong> - Rp10.000 🔥</p>
+            <p style="font-size: 20px;">🔥 Donasi Terbaru: <strong>@Username</strong> - Rp10.000 🔥</p>
             <div class="progress-container">
                 <div class="progress-bar"></div>
             </div>
             <p class="cta-text">🎯 Road to Upgrade PC: Rp500.000</p>
-            <a class="donation-link" href="https://saweria.co/dzulqar" target="_blank">💰 Donasi di: saweria.co/dzulqar</a>
+            <a class="donation-link" href="https://saweria.co/username" target="_blank">💰 Donasi di: saweria.co/username</a>
         </div>
     </div>
 </body>
