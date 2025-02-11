@@ -18,19 +18,19 @@
             overflow: hidden;
         }
         .overlay-container {
-            width: 90%; /* Menyesuaikan agar tidak kepotong */
-            max-width: 400px; /* Batasi ukuran maksimal */
+            width: 80%; /* Menyesuaikan agar tidak kepotong */
+            max-width: 350px; /* Batasi ukuran maksimal agar pas di layar vertikal */
             display: flex;
             justify-content: center;
             align-items: center;
             position: absolute;
-            bottom: 10%; /* Naikkan sedikit supaya tidak kepotong */
+            top: 50%; /* Posisikan di tengah */
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
         }
         .donation-box {
             background: rgba(0, 0, 0, 0.7);
-            padding: 15px 25px; /* Perkecil padding */
+            padding: 15px 20px; /* Perkecil padding */
             border-radius: 12px;
             border: 2px solid cyan;
             display: inline-block;
