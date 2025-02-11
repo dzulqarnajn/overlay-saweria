@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Donasi Saweria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background: transparent;
+        }
+        .overlay-container {
+            width: 100%;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .donation-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid cyan;
+            display: inline-block;
+        }
+        .progress-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            height: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .progress-bar {
+            height: 100%;
+            background: cyan;
+            width: 30%; /* Sesuaikan dengan progress donasi */
+            border-radius: 10px;
+        }
+        .cta-text {
+            margin-top: 10px;
+            font-size: 14px;
+            color: yellow;
+        }
+        .donation-link {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-decoration: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="donation-box">
+            <p>🔥 Donasi Terbaru: <strong>@Username</strong> - Rp10.000 🔥</p>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <p class="cta-text">🎯 Road to Upgrade PC: Rp500.000</p>
+            <a class="donation-link" href="https://saweria.co/dzulqar" target="_blank">💰 Donasi di: saweria.co/dzulqar</a>
+        </div>
+    </div>
+</body>
+</html>
