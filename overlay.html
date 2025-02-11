@@ -69,10 +69,17 @@
             try {
                 let response = await fetch('https://api.saweria.co/donation/dzulqar'); // Ganti 'username' dengan username Saweria kamu
                 let data = await response.json();
+                
                 let totalDonasi = data.total || 0; // Total donasi dari API
+                let latestDonation = data.recent_donations ? data.recent_donations[0] : null;
                 let targetDonasi = 500000; // Target donasi
                 let progressPercent = Math.min((totalDonasi / targetDonasi) * 100, 100);
+                
                 document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                
+                if (latestDonation) {
+                    document.querySelector('#latest-donation').innerHTML = `🔥 Donasi Terbaru: <strong>@${latestDonation.name}</strong> - Rp${latestDonation.amount} 🔥`;
+                }
             } catch (error) {
                 console.error('Error fetching donations:', error);
             }
@@ -83,12 +90,12 @@
 <body>
     <div class="overlay-container">
         <div class="donation-box">
-            <p style="font-size: 16px;">🔥 Donasi Terbaru: <strong>@Username</strong> - Rp10.000 🔥</p>
+            <p id="latest-donation" style="font-size: 16px;">🔥 Donasi Terbaru: <strong>@Username</strong> - Rp10.000 🔥</p>
             <div class="progress-container">
                 <div class="progress-bar"></div>
             </div>
             <p class="cta-text">🎯 Road to Upgrade PC: Rp500.000</p>
-            <a class="donation-link" href="https://saweria.co/dzulqar" target="_blank">💰 Donasi di: saweria.co/dzulqar</a>
+            <a class="donation-link" href="https://saweria.co/dzulqar" target="_blank">💰 Donasi di: saweria.co/username</a>
         </div>
     </div>
 </body>
