@@ -16,40 +16,49 @@
             color: white;
         }
         .overlay {
-            background-color: #2563eb;
-            padding: 15px;
+            padding: 20px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
-            border: 3px solid white;
             width: 90%;
-            max-width: 350px;
+            max-width: 450px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(37, 99, 235, 0.7); /* Warna biru seperti punya Reza Arap */
+            backdrop-filter: blur(10px);
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .box {
+            padding: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            text-align: center;
+            background: transparent; /* Menghapus background tabel */
         }
         .title {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             font-weight: bold;
-        }
-        .divider {
-            border-top: 2px solid white;
-            margin: 10px 0;
         }
         .link {
-            font-size: 0.9rem;
-            color: #f0f0f0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffcc00;
         }
         .timer {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: bold;
-            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="overlay">
-        <p class="title">Support Beli Surya 16</p>
-        <div class="divider"></div>
-        <p class="link">saweria.co/dzulqar</p>
-        <p class="timer" id="countdown">02:00:00</p>
+        <div class="content">
+            <div class="box title">Support Beli Surya 16</div>
+            <div class="box link">saweria.co/dzulqar</div>
+            <div class="box timer" id="countdown">02:00:00</div>
+        </div>
     </div>
     
     <script>
