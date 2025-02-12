@@ -1,64 +1,30 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overlay Donasi Saweria</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: white;
-            background: transparent;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-        .overlay-container {
-            width: 80%;
-            max-width: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .donation-box {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px 25px;
-            border-radius: 15px;
-            border: 3px solid #FF6E5C; /* Warna oranye sesuai tema Saweria */
-            display: inline-block;
-            width: 100%;
-        }
-        .cta-text {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #FFCC00;
-        }
-        .donation-link {
-            margin-top: 15px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #FFCC00;
-            text-decoration: none;
-            display: block;
-            pointer-events: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="overlay-container">
-        <div class="donation-box">
-            <p class="cta-text">💰 Dukung Live Ini dengan Donasi! 💰</p>
-            <span class="donation-link">saweria.co/dzulqar</span>
-        </div>
+import { useState, useEffect } from "react";
+
+export default function Overlay() {
+  const [time, setTime] = useState(2 * 60 * 60); // 2 jam dalam detik
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+  };
+
+  return (
+    <div className="absolute inset-0 flex items-center justify-center text-white">
+      <div className="bg-blue-600 px-6 py-5 rounded-lg text-center shadow-lg border-4 border-white">
+        <p className="text-xl font-semibold font-mono">Support Beli Surya 16</p>
+        <hr className="border-t-2 border-white my-1" />
+        <p className="text-sm text-gray-200 mt-2">saweria.co/dzulqar</p>
+        <p className="text-lg font-bold mt-2">{formatTime(time)}</p>
+      </div>
     </div>
-</body>
-</html>
+  );
+}
