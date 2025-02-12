@@ -48,7 +48,7 @@
             position: relative;
             display: inline-block;
             white-space: nowrap;
-            animation: glow 3s infinite alternate ease-in-out;
+            animation: glow 1.5s infinite alternate ease-in-out;
         }
         @keyframes glow {
             0% { opacity: 1; }
@@ -81,6 +81,8 @@
                 String(seconds).padStart(2, "0");
             if (time > 0) {
                 time--;
+            } else {
+                time = 2 * 60 * 60; // Reset ke 2 jam lagi
             }
         }
         setInterval(updateTimer, 1000);
